@@ -20,7 +20,11 @@ func newDeck() deck {
 
 //d is a receiver, a copy of the deck we are using and is called in the function as 'd'
 func (d deck) print() {
-	for _, card := range d {
-		fmt.Println(card)
+	for i, card := range d {
+		fmt.Println(i, card)
 	}
+}
+
+func deal(d deck, handSize int) (deck, deck) {
+	return d[:handSize], d[handSize:]
 }
