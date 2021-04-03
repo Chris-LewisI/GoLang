@@ -42,14 +42,18 @@ func main() {
 			zip:   12345,
 		},
 	}
-
-	jim.updateName("jimmy") //doesn't work because of pointers, will fix
+	//turn value into address witrh "&value"
+	jimPointer := &jim //& is an operator that points at the memory address of the variable next to it
+	jimPointer.updateName("Jimmy")
 	jim.print()
 	alex.print()
 }
 
-func (p person) updateName(newFirstName string) {
-	p.firstName = newFirstName
+//turn address into value with "*address"
+func (pointerToPerson *person) updateName(newFirstName string) { //*person is different from *pointerToPerson
+	//*[type] this is a type description that means we are working  with a pointer to a person
+	//*[pointerToPerson] this is an operator that gives us access to the value we wnt to manipulate or access
+	(*pointerToPerson).firstName = newFirstName //* operator asks for the value that is stored at that memory address
 }
 
 func (p person) print() {
