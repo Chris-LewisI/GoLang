@@ -43,6 +43,15 @@ func main() {
 		},
 	}
 
-	fmt.Println(alex)
-	fmt.Println(jim)
+	jim.updateName("jimmy") //doesn't work because of pointers, will fix
+	jim.print()
+	alex.print()
+}
+
+func (p person) updateName(newFirstName string) {
+	p.firstName = newFirstName
+}
+
+func (p person) print() {
+	fmt.Printf("%+v\n", p)
 }
