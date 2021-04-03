@@ -11,7 +11,8 @@ type contactInfo struct {
 type person struct {
 	firstName string
 	lastName  string
-	contact   contactInfo
+	// contact   contactInfo
+	contactInfo
 }
 
 func main() {
@@ -30,13 +31,13 @@ func main() {
 	var alex person
 	alex.firstName = "Alex"
 	alex.lastName = "Anderson"
-	alex.contact.email = "alexanderson@email.com"
-	alex.contact.zip = 12345
+	alex.contactInfo.email = "alexanderson@email.com"
+	alex.contactInfo.zip = 12345
 
 	jim := person{
 		firstName: "Jim",
 		lastName:  "Party",
-		contact: contactInfo{
+		contactInfo: contactInfo{
 			email: "jimparty@email.com",
 			zip:   12345,
 		},
