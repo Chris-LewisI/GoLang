@@ -43,9 +43,11 @@ func main() {
 		},
 	}
 	//turn value into address witrh "&value"
-	jimPointer := &jim //& is an operator that points at the memory address of the variable next to it
-	jimPointer.updateName("Jimmy")
+	// jimPointer := &jim //& is an operator that points at the memory address of the variable next to it
+	// jimPointer.updateName("Jimmy")
+	jim.updateName("Jimmy") //this is a shortcut in Go that allows us to bypass the pointer setup if the type matches the pointer type in the function
 	jim.print()
+
 	alex.print()
 }
 
